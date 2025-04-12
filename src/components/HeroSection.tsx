@@ -22,10 +22,11 @@ const HeroSection: React.FC = () => {
         <div className="mb-10">
           <div className="relative inline-block animate-float mb-8">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-primary/50 glow overflow-hidden">
-              {/* Placeholder for profile image - you'll need to add the actual image */}
-              <div className="w-full h-full bg-gradient-to-br from-galaxy-purple/80 to-galaxy-blue/80 flex items-center justify-center text-6xl font-bold text-white">
-                MR
-              </div>
+              <img 
+                src="/lovable-uploads/aac9526e-a473-49b8-9c8d-c866e1e30555.png" 
+                alt="Mohamed Refaay" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           

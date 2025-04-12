@@ -42,6 +42,20 @@ type ContentType = {
         name: string;
       }>;
     };
+    marketing: {
+      title: string;
+      globalTitle: string;
+      globalDescription: string;
+      growthTitle: string;
+      growthDescription: string;
+      innovationTitle: string;
+      innovationDescription: string;
+      ctaTitle: string;
+      ctaDescription: string;
+      ctaButton: string;
+      featuresTitle: string;
+      features: string[];
+    };
     contact: {
       title: string;
       whatsapp: string;
@@ -67,7 +81,7 @@ export const content: ContentType = {
     hero: {
       greeting: "Hello, I'm",
       name: "Mohamed Refaay",
-      tagline: "Launch your creativity to the galaxy 👨‍🚀🚀",
+      tagline: "What are you waiting for to get your product global? 👨‍🚀🚀",
       ctaButton: "Learn More",
     },
     about: {
@@ -118,6 +132,26 @@ export const content: ContentType = {
         { name: "Participation in University Student Activities" },
       ],
     },
+    marketing: {
+      title: "Product Marketing Solutions",
+      globalTitle: "Global Reach",
+      globalDescription: "Expand your business beyond borders with strategies tailored for international markets",
+      growthTitle: "Exponential Growth",
+      growthDescription: "Accelerate your product adoption with data-driven marketing campaigns",
+      innovationTitle: "Innovative Approach",
+      innovationDescription: "Stand out with cutting-edge marketing techniques that capture attention",
+      ctaTitle: "Ready to Go Global?",
+      ctaDescription: "Let's work together to take your product to international markets with strategic marketing solutions",
+      ctaButton: "Start Your Journey",
+      featuresTitle: "What We Offer",
+      features: [
+        "Social Media Marketing",
+        "Video Content Creation",
+        "App Store Optimization",
+        "Digital Advertising",
+        "Brand Identity Development"
+      ]
+    },
     contact: {
       title: "Contact Me",
       whatsapp: "WhatsApp: 01551530170",
@@ -140,7 +174,7 @@ export const content: ContentType = {
     hero: {
       greeting: "مرحباً، أنا",
       name: "محمد رفاعي",
-      tagline: "أطلق إبداعك إلى المجرة 👨‍🚀🚀",
+      tagline: "مستنى اية عشان توصل المنتج بتاعك للعالمية 👨‍🚀🚀",
       ctaButton: "اكتشف المزيد",
     },
     about: {
@@ -190,6 +224,26 @@ export const content: ContentType = {
         { name: "كورسات تسويق رقمي (عربي وأجنبي)" },
         { name: "مشاركات في أنشطة طلابية داخل الجامعة" },
       ],
+    },
+    marketing: {
+      title: "حلول تسويق المنتجات",
+      globalTitle: "وصول عالمي",
+      globalDescription: "وسع نطاق عملك خارج الحدود باستراتيجيات مخصصة للأسواق العالمية",
+      growthTitle: "نمو متسارع",
+      growthDescription: "سرّع من انتشار منتجك بحملات تسويقية مبنية على البيانات",
+      innovationTitle: "نهج مبتكر",
+      innovationDescription: "تميز بتقنيات تسويقية متطورة تجذب الانتباه",
+      ctaTitle: "جاهز للانطلاق عالمياً؟",
+      ctaDescription: "لنعمل معاً لنقل منتجك إلى الأسواق العالمية بحلول تسويقية استراتيجية",
+      ctaButton: "ابدأ رحلتك",
+      featuresTitle: "ما نقدمه",
+      features: [
+        "تسويق وسائل التواصل الاجتماعي",
+        "إنشاء محتوى فيديو",
+        "تحسين متجر التطبيقات",
+        "الإعلان الرقمي",
+        "تطوير هوية العلامة التجارية"
+      ]
     },
     contact: {
       title: "اتصل بي",
