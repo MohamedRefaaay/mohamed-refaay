@@ -4,7 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { content } from '@/data/content';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Download, Phone, Mail, MessageSquare, Instagram } from 'lucide-react';
+import { Download, Mail, Instagram } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const { language } = useLanguage();
@@ -106,7 +106,9 @@ const ContactSection: React.FC = () => {
               {contactLinks.map((link, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    {typeof link.icon === 'function' ? <link.icon /> : <link.icon className="h-5 w-5 text-primary" />}
+                    {typeof link.icon === 'function' 
+                      ? link.icon() 
+                      : <link.icon className="h-5 w-5 text-primary" />}
                   </div>
                   <p>{link.name}</p>
                 </div>
@@ -138,7 +140,9 @@ const ContactSection: React.FC = () => {
                   className="flex items-center gap-3 p-3 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors"
                 >
                   <div className="w-8 h-8 rounded-full bg-primary/30 flex items-center justify-center">
-                    {typeof link.icon === 'function' ? <link.icon /> : <link.icon className="h-5 w-5 text-white" />}
+                    {typeof link.icon === 'function' 
+                      ? link.icon() 
+                      : <link.icon className="h-5 w-5 text-white" />}
                   </div>
                   <span>{link.name}</span>
                 </a>
