@@ -4,16 +4,23 @@ import { useLanguage } from '@/context/LanguageContext';
 import { content } from '@/data/content';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Download, Phone, Mail, MessageSquare } from 'lucide-react';
+import { Download, Phone, Mail, MessageSquare, Instagram, TikTok } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const { language } = useLanguage();
   const t = content[language].contact;
 
   const socialLinks = [
-    { name: 'Instagram', url: 'https://instagram.com' },
-    { name: 'TikTok', url: 'https://tiktok.com' },
-    { name: 'YouTube', url: 'https://youtube.com' },
+    { 
+      name: 'Instagram', 
+      url: 'https://www.instagram.com/kalo_4ha?igsh=cDY0ZzM1bGk4eWIx', 
+      icon: Instagram 
+    },
+    { 
+      name: 'TikTok', 
+      url: 'https://www.tiktok.com/@mohamed__refaay?_t=ZS-8vTSCvbEDnr&_r=1', 
+      icon: TikTok 
+    },
   ];
 
   return (
@@ -75,7 +82,7 @@ const ContactSection: React.FC = () => {
                   className="flex items-center gap-3 p-3 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors"
                 >
                   <div className="w-8 h-8 rounded-full bg-primary/30 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">{link.name.charAt(0)}</span>
+                    <link.icon className="h-5 w-5 text-white" />
                   </div>
                   <span>{link.name}</span>
                 </a>
