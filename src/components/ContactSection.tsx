@@ -10,6 +10,24 @@ const ContactSection: React.FC = () => {
   const { language } = useLanguage();
   const t = content[language].contact;
 
+  // Extract the phone number from WhatsApp text
+  const getWhatsAppNumber = () => {
+    const numberMatch = t.whatsapp.match(/\d+/);
+    return numberMatch ? numberMatch[0] : '';
+  };
+  
+  // Extract email from email text
+  const getEmailAddress = () => {
+    const emailMatch = t.email.match(/[\w.-]+@[\w.-]+\.\w+/);
+    return emailMatch ? emailMatch[0] : '';
+  };
+  
+  // Extract Telegram username from Telegram text
+  const getTelegramUsername = () => {
+    const usernameMatch = t.telegram.match(/@[\w_]+/);
+    return usernameMatch ? usernameMatch[0].substring(1) : '';
+  };
+
   const socialLinks = [
     { 
       name: 'Instagram', 
@@ -46,6 +64,7 @@ const ContactSection: React.FC = () => {
   const contactLinks = [
     { 
       name: t.whatsapp, 
+      url: `https://wa.me/${getWhatsAppNumber()}`,
       icon: () => (
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -68,6 +87,7 @@ const ContactSection: React.FC = () => {
     },
     { 
       name: t.telegram, 
+      url: `https://t.me/${getTelegramUsername()}`,
       icon: () => (
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -87,6 +107,7 @@ const ContactSection: React.FC = () => {
     },
     { 
       name: t.email, 
+      url: `mailto:${getEmailAddress()}`,
       icon: Mail
     },
   ];
@@ -104,14 +125,20 @@ const ContactSection: React.FC = () => {
             
             <div className="space-y-4">
               {contactLinks.map((link, index) => (
-                <div key={index} className="flex items-center gap-3">
+                <a 
+                  key={index} 
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                     {typeof link.icon === 'function' 
-                      ? link.icon() 
+                      ? <link.icon />
                       : <link.icon className="h-5 w-5 text-primary" />}
                   </div>
                   <p>{link.name}</p>
-                </div>
+                </a>
               ))}
             </div>
             
@@ -141,7 +168,7 @@ const ContactSection: React.FC = () => {
                 >
                   <div className="w-8 h-8 rounded-full bg-primary/30 flex items-center justify-center">
                     {typeof link.icon === 'function' 
-                      ? link.icon() 
+                      ? <link.icon />
                       : <link.icon className="h-5 w-5 text-white" />}
                   </div>
                   <span>{link.name}</span>
