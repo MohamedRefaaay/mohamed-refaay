@@ -7,6 +7,7 @@ export const arContent: LanguageContent = {
     about: "عنّي",
     skills: "المهارات",
     projects: "المشاريع",
+    store: "المتجر",
     contact: "اتصل بي",
   },
   hero: {

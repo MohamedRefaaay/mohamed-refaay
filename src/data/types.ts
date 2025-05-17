@@ -4,6 +4,7 @@ export type NavbarContent = {
   about: string;
   skills: string;
   projects: string;
+  store: string;
   contact: string;
 };
 

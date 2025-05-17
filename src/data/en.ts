@@ -7,6 +7,7 @@ export const enContent: LanguageContent = {
     about: "About",
     skills: "Skills",
     projects: "Projects",
+    store: "Store",
     contact: "Contact",
   },
   hero: {
