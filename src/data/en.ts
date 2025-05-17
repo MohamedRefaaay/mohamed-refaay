@@ -1,5 +1,6 @@
 
 import type { LanguageContent } from './types';
+import { Camera, Laptop, Smartphone } from 'lucide-react';
 
 export const enContent: LanguageContent = {
   navbar: {
@@ -63,6 +64,31 @@ export const enContent: LanguageContent = {
       { name: "Digital Marketing Courses (Arabic & Foreign)" },
       { name: "Participation in University Student Activities" },
     ],
+  },
+  store: {
+    title: "Digital Services Store",
+    description: "Explore our professional digital products and services",
+    cta: "Browse All Services",
+    products: [
+      {
+        title: "Video Editing",
+        description: "Professional video editing services using CapCut for social media",
+        price: "$99",
+        icon: Camera
+      },
+      {
+        title: "Digital Marketing",
+        description: "Comprehensive marketing strategies for your business growth",
+        price: "$149",
+        icon: Laptop
+      },
+      {
+        title: "App Design",
+        description: "Custom mobile application design and consultation services",
+        price: "$199",
+        icon: Smartphone
+      }
+    ]
   },
   marketing: {
     title: "Product Marketing Solutions",

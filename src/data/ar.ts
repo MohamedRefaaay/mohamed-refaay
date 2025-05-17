@@ -1,5 +1,6 @@
 
 import type { LanguageContent } from './types';
+import { Camera, Laptop, Smartphone } from 'lucide-react';
 
 export const arContent: LanguageContent = {
   navbar: {
@@ -63,6 +64,31 @@ export const arContent: LanguageContent = {
       { name: "كورسات تسويق رقمي (عربي وأجنبي)" },
       { name: "مشاركات في أنشطة طلابية داخل الجامعة" },
     ],
+  },
+  store: {
+    title: "متجر الخدمات الرقمية",
+    description: "استكشف منتجاتنا وخدماتنا الرقمية الاحترافية",
+    cta: "استعرض جميع الخدمات",
+    products: [
+      {
+        title: "مونتاج فيديو",
+        description: "خدمات مونتاج فيديو احترافية باستخدام CapCut لوسائل التواصل",
+        price: "٩٩$",
+        icon: Camera
+      },
+      {
+        title: "تسويق رقمي",
+        description: "استراتيجيات تسويق شاملة لنمو نشاطك التجاري",
+        price: "١٤٩$",
+        icon: Laptop
+      },
+      {
+        title: "تصميم تطبيقات",
+        description: "خدمات تصميم واستشارات تطبيقات جوال مخصصة",
+        price: "١٩٩$",
+        icon: Smartphone
+      }
+    ]
   },
   marketing: {
     title: "حلول تسويق المنتجات",

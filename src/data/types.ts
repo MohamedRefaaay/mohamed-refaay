@@ -51,6 +51,20 @@ export type CertificatesContent = {
   }>;
 };
 
+export type StoreProduct = {
+  title: string;
+  description: string;
+  price: string;
+  icon: any;
+};
+
+export type StoreContent = {
+  title: string;
+  description: string;
+  cta: string;
+  products: Array<StoreProduct>;
+};
+
 export type MarketingContent = {
   title: string;
   globalTitle: string;
@@ -85,6 +99,7 @@ export type LanguageContent = {
   skills: SkillsContent;
   projects: ProjectsContent;
   certificates: CertificatesContent;
+  store: StoreContent;
   marketing: MarketingContent;
   contact: ContactContent;
   footer: FooterContent;
