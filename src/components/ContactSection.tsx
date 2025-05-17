@@ -37,7 +37,7 @@ const ContactSection: React.FC = () => {
     { 
       name: 'TikTok (@mohamed__refaay)', 
       url: 'https://www.tiktok.com/@mohamed__refaay?_t=ZS-8vTSCvbEDnr&_r=1', 
-      icon: () => (
+      iconComponent: () => (
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           width="24" 
@@ -65,7 +65,7 @@ const ContactSection: React.FC = () => {
     { 
       name: t.whatsapp, 
       url: `https://wa.me/${getWhatsAppNumber()}`,
-      icon: () => (
+      iconComponent: () => (
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           width="24" 
@@ -88,7 +88,7 @@ const ContactSection: React.FC = () => {
     { 
       name: t.telegram, 
       url: `https://t.me/${getTelegramUsername()}`,
-      icon: () => (
+      iconComponent: () => (
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           width="24" 
@@ -133,9 +133,11 @@ const ContactSection: React.FC = () => {
                   className="flex items-center gap-3 hover:text-primary transition-colors"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    {typeof link.icon === 'function' 
-                      ? <link.icon />
-                      : <link.icon className="h-5 w-5 text-primary" />}
+                    {link.iconComponent ? (
+                      <link.iconComponent />
+                    ) : (
+                      link.icon && React.createElement(link.icon, { className: "h-5 w-5 text-primary" })
+                    )}
                   </div>
                   <p>{link.name}</p>
                 </a>
@@ -167,9 +169,11 @@ const ContactSection: React.FC = () => {
                   className="flex items-center gap-3 p-3 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors"
                 >
                   <div className="w-8 h-8 rounded-full bg-primary/30 flex items-center justify-center">
-                    {typeof link.icon === 'function' 
-                      ? <link.icon />
-                      : <link.icon className="h-5 w-5 text-white" />}
+                    {link.iconComponent ? (
+                      <link.iconComponent />
+                    ) : (
+                      link.icon && React.createElement(link.icon, { className: "h-5 w-5 text-white" })
+                    )}
                   </div>
                   <span>{link.name}</span>
                 </a>
