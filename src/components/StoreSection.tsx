@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ShoppingCart, ShoppingBag, Filter, Search, Star } from 'lucide-react';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from "@/hooks/use-toast";
 import { Link } from 'react-router-dom';
 
 const StoreSection: React.FC = () => {
