@@ -6,6 +6,8 @@ export type NavbarContent = {
   projects: string;
   store: string;
   contact: string;
+  products: string;
+  cart: string;
 };
 
 export type HeroContent = {
@@ -52,17 +54,51 @@ export type CertificatesContent = {
 };
 
 export type StoreProduct = {
+  id: string;
   title: string;
   description: string;
   price: string;
+  priceValue: number;
+  category: string;
+  image?: string;
   icon: any;
+  featured: boolean;
+  rating?: number;
+  reviews?: number;
+};
+
+export type StoreCategory = {
+  id: string;
+  name: string;
 };
 
 export type StoreContent = {
   title: string;
   description: string;
   cta: string;
+  viewAllProducts: string;
+  featuredTitle: string;
+  categories: Array<StoreCategory>;
   products: Array<StoreProduct>;
+  addToCart: string;
+  emptyCart: string;
+  cartTitle: string;
+  quantity: string;
+  checkout: string;
+  continueShopping: string;
+  productDetails: string;
+  relatedProducts: string;
+  searchPlaceholder: string;
+  filterBy: string;
+  sortBy: string;
+  reviews: string;
+  checkoutTitle: string;
+  shipping: string;
+  payment: string;
+  orderSummary: string;
+  placeOrder: string;
+  customerService: string;
+  faq: string;
 };
 
 export type MarketingContent = {
