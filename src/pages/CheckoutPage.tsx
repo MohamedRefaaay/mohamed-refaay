@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Checkbox } from '@/components/ui/checkbox';
 import { 
   CreditCard, 
   Truck, 
@@ -35,6 +36,8 @@ const CheckoutPage: React.FC = () => {
   
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [paymentMethod, setPaymentMethod] = useState('credit-card');
+  const [whatsappNotifications, setWhatsappNotifications] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('01551530170');
   
   // Get cart from localStorage on component mount
   useEffect(() => {
@@ -79,6 +82,19 @@ const CheckoutPage: React.FC = () => {
   const total = subtotal + shippingFee;
   
   const handlePlaceOrder = () => {
+    // Show notification about WhatsApp updates if enabled
+    if (whatsappNotifications) {
+      toast({
+        title: language === 'en' ? 
+          'WhatsApp Notifications Enabled!' : 
+          'تم تفعيل إشعارات واتساب!',
+        description: language === 'en' ? 
+          `You'll receive order updates on WhatsApp at ${phoneNumber}` : 
+          `سوف تتلقى تحديثات الطلب على واتساب على الرقم ${phoneNumber}`,
+        duration: 5000,
+      });
+    }
+    
     toast({
       title: language === 'en' ? 'Order Placed Successfully!' : 'تم تقديم الطلب بنجاح!',
       description: language === 'en' ? 
@@ -202,7 +218,12 @@ const CheckoutPage: React.FC = () => {
                   </div>
                   <div>
                     <Label htmlFor="phone">{language === 'en' ? 'Phone Number' : 'رقم الهاتف'}</Label>
-                    <Input id="phone" className="mt-1" />
+                    <Input 
+                      id="phone" 
+                      className="mt-1" 
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
                   </div>
                   <div>
                     <Label htmlFor="country">{language === 'en' ? 'Country' : 'الدولة'}</Label>
@@ -219,6 +240,25 @@ const CheckoutPage: React.FC = () => {
                   <div>
                     <Label htmlFor="postal">{language === 'en' ? 'Postal Code' : 'الرمز البريدي'}</Label>
                     <Input id="postal" className="mt-1" />
+                  </div>
+                </div>
+
+                {/* WhatsApp Notifications */}
+                <div className="mt-4">
+                  <div className="flex items-center space-x-2">
+                    <Checkbox 
+                      id="whatsapp-notifications" 
+                      checked={whatsappNotifications}
+                      onCheckedChange={(checked) => setWhatsappNotifications(checked as boolean)}
+                    />
+                    <label
+                      htmlFor="whatsapp-notifications"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      {language === 'en' 
+                        ? 'Receive order updates via WhatsApp' 
+                        : 'استلام تحديثات الطلب عبر واتساب'}
+                    </label>
                   </div>
                 </div>
               </div>
